@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<h2>{{ page.title }}</h2>
+<small>originally published: {{ page.date | date: '%b %Y' }}</small>
+
+{{ content }}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Every image referenced from a Markdown document
+        $("img").each(function() {
+            // Let's put a caption if there is one
+            if($(this).attr("title"))
+            $(this).wrap('<figure class="image"></figure>')
+            .after('<figcaption>'+$(this).attr("title")+'</figcaption>');
+        });
+    });
+</script>
