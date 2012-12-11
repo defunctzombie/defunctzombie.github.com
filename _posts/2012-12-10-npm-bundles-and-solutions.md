@@ -1,6 +1,7 @@
 ---
 layout: post
 title: npm, why do I care?
+published: false
 ---
 
 **tl;dr;** npm makes it super easy to share and use javascript code for both client and server environments in more ways than you think. It certainly did for me.
