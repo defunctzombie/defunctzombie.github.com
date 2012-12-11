@@ -55,6 +55,10 @@ figure figcaption {
     padding: 2px;
 }
 
+.posts li a {
+    text-decoration: none;
+}
+
 .posts li:before {
     content: '· ';
 }
@@ -85,6 +89,7 @@ a:hover {
     -moz-opacity: 0.5;
     -webkit-opacity: 0.5;
     opacity: 0.5;
+    text-decoration: none;
 }
 
 .sidebar .icon:hover {
