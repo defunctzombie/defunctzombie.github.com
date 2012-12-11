@@ -72,9 +72,13 @@ figure figcaption {
     width: 160px;
 }
 
-a, a:hover, a:visited, a:active {
-    text-decoration: none;
+a, a:hover, a:active, a:visited {
+    text-decoration: underline;
     color: black;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 .sidebar .icon {
