@@ -4,12 +4,12 @@ title: the copy & paste virus
 ---
 >If there is bad code, I will find it, and I will copy it.
 
-Years ago (long before the web 2.0 days) I wrote javascript. Then I stopped. These days, I again write a lot of javascript. Other people also write a lot of javascript and not a single day goes by that someone doesn't write some new jquery plugin or other interesting javascript client library. This is fantastic! All of these developers are solving their problems and sharing the solution with everyone else.
+Years ago (long before the web 2.0 days) I wrote JavaScript. Then I stopped. These days, I again write a lot of JavaScript. Other people also write a lot of JavaScript and not a single day goes by that someone doesn't write some new jQuery plugin or other interesting JavaScript client library. This is fantastic! All of these developers are solving their problems and sharing the solution with everyone else.
 
-However, when I look back on the javascript that I would see someone write years ago and the javascript I see being distributed today, I don't see much difference. Sure, some styles and html technologies are better, but I still see everyone delivering javascript which all looks like a variation of the following.
+However, when I look back on the JavaScript that I would see someone write years ago and the JavaScript I see being distributed today, I don't see much difference. Sure, some styles and html technologies are better, but I still see everyone delivering JavaScript which all looks like a variation of the following.
 
 {% highlight javascript %}
-(function(window) { // or $ depending if it is a jquery plugin
+(function(window) { // or $ depending if it is a jQuery plugin
     var run,
         out,
         find,
@@ -42,9 +42,9 @@ However, when I look back on the javascript that I would see someone write years
 
 That's it. One giant file full of code that self references, nests over and over and is contained within a closure just for fun! Why are we doing this? Do we (as developers) hate clarity? Do we enjoy writing a giant closure to do nothing?
 
-Think about how you write code and libraries in other languages. How often do you dump everything into a "mega" file. How often to do put all of it inside one single outer function *just cause*? **NEVER**, that is how often. In other languages you use *import*, *require*, *include*, etc.. so why do we continue to allow our javascript to look like unmaintainable shit? No module system.
+Think about how you write code and libraries in other languages. How often do you dump everything into a "mega" file. How often to do put all of it inside one single outer function *just cause*? **NEVER**, that is how often. In other languages you use *import*, *require*, *include*, etc.. so why do we continue to allow our JavaScript to look like unmaintainable shit? No module system.
 
-**WRONG!** There is **NO** reason. Javascript has a super simple module system and countless people are overlooking it! I am talking about the commonjs require system. Here is all you need to know about commonjs requires: They work, they require no language extensions, and they CAN do what you need. That's it. Everything else is a tooling and education problem. Period.
+**WRONG!** There is **NO** reason. JavaScript has a super simple module system and countless people are overlooking it! I am talking about the commonjs require system. Here is all you need to know about commonjs requires: They work, they require no language extensions, and they CAN do what you need. That's it. Everything else is a tooling and education problem. Period.
 
 ## commonjs intermission
 
@@ -52,7 +52,7 @@ Since not everyone is familiar with commonjs, let me do a super quick primer wit
 
 * every file is a module
 * everything in a file is private to the file unless explicitly exported
-* any valid javascript type can be exported through **module.exports**
+* any valid JavaScript type can be exported through **module.exports**
 * the **require** function is used to load a module
 
 That's it! Now all you have to do is move some of that code into a separate file and *require* it from your main file. Lets say I am writing a basic client library to do some stuff.
@@ -100,22 +100,22 @@ I am going to say that one more time, since I don't think enough people apprecia
 
 ## the hammer
 
-Today is the day you say **NO MORE** to massive, unorganized repositories of javascript files and start using modules. You don't have to add any extra metapackages or publish your code in any special place to do this. To get you started, I have provided a very very basic tool which will build your multi file javascript projects called [reunion](https://github.com/shtylman/reunion). I have even provided a makefile snippet to use it when creating the final code bundle for others.
+Today is the day you say **NO MORE** to massive, unorganized repositories of JavaScript files and start using modules. You don't have to add any extra metapackages or publish your code in any special place to do this. To get you started, I have provided a very very basic tool which will build your multi file JavaScript projects called [reunion](https://github.com/shtylman/reunion). I have even provided a makefile snippet to use it when creating the final code bundle for others.
 
 #### use [reunion](https://github.com/shtylman/reunion) in your codebase NOW with minimal effort on your part!
 
-You don't have to dive in 100% from day 1. If you have a jquery plugin, you can still use that wonderful global $ **var $ = window.jQuery** in your module works!. However, these first steps will make your code that much easier to follow and eventually you will be able to *require('jquery');* just like anything else!
+You don't have to dive in 100% from day 1. If you have a jQuery plugin, you can still use that wonderful global $ **var $ = window.jQuery** in your module works!. However, these first steps will make your code that much easier to follow and eventually you will be able to *require('jQuery');* just like anything else!
 
 ## no overhead
 
 Reunion require functionality is **TINY**. The minified require function comes in at ~140 bytes! Since reunion puts everything into a single closure for you, you still benefit from excellent minification. Even more, each module is put into a function which means it can be minified locally and allows for the minifier to reuse more of the shorter variable names.
 
-It wasn't until I started writing node.js code and modules that I realized how stupid front end file organization and usage was and cotninues to be for so many people. As soon as I started writing modules and separating code, javascript got that much easier and maintainable. Tests are easier to localize and common components can be shared much easier. More importantly, given the right tool, I could package any module however I wanted!
+It wasn't until I started writing node.js code and modules that I realized how stupid front end file organization and usage was and cotninues to be for so many people. As soon as I started writing modules and separating code, JavaScript got that much easier and maintainable. Tests are easier to localize and common components can be shared much easier. More importantly, given the right tool, I could package any module however I wanted!
 
-What about other loaders? We are back to a tooling issue. The great thing about commonjs requires is that they are super easy to tool around! If you want AMD output, just send me a pull request for and AMD target. That's it! Now only one place has to worry about the right closure format. Everyone else just has simple and clean javascript!
+What about other loaders? We are back to a tooling issue. The great thing about commonjs requires is that they are super easy to tool around! If you want AMD output, just send me a pull request for and AMD target. That's it! Now only one place has to worry about the right closure format. Everyone else just has simple and clean JavaScript!
 
 ## the future
 
-Reunion is a very simple tool. In the next post, I am going to talk about tools like [npm](http://npmjs.org), [script](https://github.com/shtylman/node-script), and [browserify](https://github.com/substack/node-browserify) and how they can completely revolutionize how you develop and share javascript.
+Reunion is a very simple tool. In the next post, I am going to talk about tools like [npm](http://npmjs.org), [script](https://github.com/shtylman/node-script), and [browserify](https://github.com/substack/node-browserify) and how they can completely revolutionize how you develop and share JavaScript.
 
 And remember! **LET THE TOOL DO THE WORK!**
