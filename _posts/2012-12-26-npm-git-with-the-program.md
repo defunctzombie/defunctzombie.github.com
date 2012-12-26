@@ -41,7 +41,7 @@ Now, if your module is awesome (and there is no reason for it not to be), then y
 }
 {% endhighlight %}
 
-I recommend using [exact versions]({% post_url 2012-02-27-pinning-your-hopes %}) so when you revisit your code months later, you can easily identify what versions you had installed and the module worked with.
+I recommend using [exact versions](/post/pinning-your-hopes) so when you revisit your code months later, you can easily identify what versions you had installed and the module worked with.
 
 Now you can just run **npm install** and npm will fetch the exact versions of the dependencies specified.
 
