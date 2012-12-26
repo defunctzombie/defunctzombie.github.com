@@ -1,5 +1,5 @@
 pygments: true
-markdown: kramdown
+markdown: redcarpet
 permalink: /post/:title
 title: 'shtylman.com'
 url: 'http://shtylman.com'
