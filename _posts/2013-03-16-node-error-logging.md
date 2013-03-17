@@ -42,7 +42,7 @@ will_error(function(err) {
 });
 ```
 
-Now, instead of logging to console, we are logging through `book` which provides a few log events and also lots to console for us. The application is identical to what we had before, except now we can leverage our logging library to get more information from our errors.
+Now, instead of logging to console, we are logging through `book` which provides a few log events and also logs to console for us. The application is identical to what we had before, except now we can leverage our logging library to get more information from our errors.
 
 ## introduce an alerting solution
 
